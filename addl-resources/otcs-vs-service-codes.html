@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OTC Codes vs Service Codes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../styles/bootstrap-min.css"   />
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body>
+  <div class="my-1 mx-2">
+    <a href="../index.html">&laquo; Back to OTCB</a>
+  </div>
+
+  <div class="container my-5">
+    <h1 class="text-center">OTC Codes vs Service Codes</h1>
+
+    <div class="description my-5 pt-5 pb-5 text-center m-auto">If you've been confused about the difference between a service code and an OTC (one-time charge) this should help to distinguish the two.</div>
+
+    <!-- <p>This section discusses the difference between service codes and one-time charge codes.</p> -->
+
+    <h3 class="mt-5">Service Codes</h3>
+
+    <div>You can think of a service code as a code that tells equipment what to do, and tells the <span  class="has-inline-note">biller <i class="bi bi-question-diamond "></i></span> how to charge the customer each month. This is a  bit of a simplification, but it helps to illustrate the role a service code provides.
+      <div class="inline-note">In this context, "the biller" refers to the order entry software used to view and modify account details. Our billers include CSG, CRM, ICOMS, and for some agents, Agent OS.</div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col">
+        <p class="mt-3 font-weight-bold">Some examples of Cable service codes and what they do:</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <ul>
+          <li>LI005 is a service code that tells the equipment to act an HD receiver and the biller to charge the customer $6.99 each month.</li>
+          <li>LI030 is service code that tell the equipment to act as an HD DVR receiver and to charge the customer $6.99.</li>
+          <li>LI035 is a service code that tell the equipment to activate the DVR service, and to charge the customer $12.99 (or current price).
+            <br><span style="color: #999; font-style: italic;">A DVR is always made up of at least two services codes: the DVR box code and the DVR service code.</span></li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <table class="w-100 mb-3" style="border: 1px solid #737373; color: #333; " border="1">
+          <tr style="background-color: rgb(0, 48, 87); color: #fff; text-align: center; padding: 0.3rem;">
+            <th colspan="3" style="padding: 0.3rem;">High Definition (HD) Equipment</th>
+          </tr>
+          <tr style="background-color: rgb(0, 153, 216); color: #fff; border: 1px solid #737373 border: 1px solid #737373">
+            <th style="padding: 0.3rem;">Category</th>
+            <th style="padding: 0.3rem;">Description</th>
+            <th style="padding: 0.3rem;">Service Code</th>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">Spectrum Receiver</td>
+            <td style="padding: 0.2rem;">HD Set-top Box</td>
+            <td style="padding: 0.2rem;">LI005</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="padding: 0.2rem;">Spectrum DVR</td>
+            <td style="padding: 0.2rem;">HD DVR Box</td>
+            <td style="padding: 0.2rem;">LI030</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">DVR Service</td>
+            <td style="padding: 0.2rem;">LI035</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <p class="mt-3 font-weight-bold">Some examples of Internet service codes and what they do:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <ul>
+          <li>LA705 is a service code that is a base code which tells the modem to allow internet service to work. </li>
+          <li>LC791 is a service code that tells the modem that the speed tier is the 400mbps and informs the biller to charge the appropriate fee for Spectrum Ultra internet service. Notice how internet is always built up using two codes: the base code to turn on internet service, plus the speed code to determine speed and pricing.
+          <br><i style="color: #999;">Note: The LN748 is a package code. Package codes are service codes that affect pricing based on how various services are bundled.</i>
+          </li>
+          <li>LI760 is a service code that tells us to look for a customer-owned modem.</li>
+          <li>LI750 is a service code that tells us to look for a leased modem and a wifi code.</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <table class="w-100 mb-3" style="border: 1px solid #737373; color: #333; " border="1">
+          <tr style="background-color: rgb(0, 48, 87); color: #fff; text-align: center; padding: 0.3rem;">
+            <th colspan="3" style="padding: 0.3rem;">Internet Codes</th>
+          </tr>
+          <tr style="background-color: rgb(0, 153, 216); color: #fff; border: 1px solid #737373 border: 1px solid #737373">
+            <th style="padding: 0.3rem;">Action</th>
+            <th style="padding: 0.3rem;">Description</th>
+            <th style="padding: 0.3rem;">Service Code</th>
+          </tr>
+          <tr>
+            <td rowspan="2" style="padding: 0.2rem;">Step 1: Enter the Internet Base Code</td>
+            <td style="padding: 0.2rem;">Internet Base Code (Bundled)</td>
+            <td style="padding: 0.2rem;">LA705 and LN748</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">Spectrum Internet Ultra (400x20) (New or Upgrading +25 Customers)</td>
+            <td style="padding: 0.2rem;">LC791</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="padding: 0.2rem;">Step 2: Enter the Modem Lease - Must Choose One</td>
+            <td style="padding: 0.2rem;">Customer Owned Modem </td>
+            <td style="padding: 0.2rem;">LI760  </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">Leased Modem</td>
+            <td style="padding: 0.2rem;">LI750 </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <p>Service codes are located in the CoPilot articles <a href="https://charterukm.custhelp.com/app/answers/answer_view/a_id/1009039">GEN5394</a> and <a href="https://charterukm.custhelp.com/app/answers/answer_view/a_id/1002197">GEN2161</a>. </p>
+
+
+    <h3 class="mt-5">One-Time Charge Codes</h3>
+
+    <p>You can think of a one-time charge code (OTC) as a code that describes the type of work order being entered and the type of actions that need to be performed.  In the case of a professinal home visit (PHV), these codes describe to the technician what type of work needs to be done. In the case of a self-install, the OTCs describe what type of equipment needs to be shipped out or picked up.</p>
+    <p>Note: Don't get confused by the name! A one-time charge code does not always add a charge to a work order.</p>
+
+    <div class="row">
+      <div class="col">
+        <p class="mt-3 font-weight-bold">Some examples of one-time charge codes and what they do:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <ul>
+          <li>LK200 is an OTC that tells us we are doing an installation for a brand-new cable customer. (The work order may also include other lines of business. )</li>
+          <li>LK205 is an OTC that tells us we are creating a professional home visit order to do something cable-related, usually installing a cable box or cable outlet.</li>
+          <li>LK206  tells us we are creating an office-only work order to balance or correct a cable occurrence.</li>
+          <li>V0107 tells us we are creating a self-install order to mail or pick up a cable kit.</li>
+        </ul>
+      </div>
+
+      <div class="col-6">
+        <table class="w-100 mb-3" style="border: 1px solid #737373; color: #333; " border="1">
+          <tr style="background-color: rgb(0, 48, 87); color: #fff; text-align: center; padding: 0.3rem;">
+            <th colspan="3" style="padding: 0.3rem;">OTC Codes</th>
+          </tr>
+          <tr style="background-color: rgb(0, 153, 216); color: #fff; border: 1px solid #737373 border: 1px solid #737373">
+            <th style="padding: 0.3rem;">Service Description</th>
+            <th style="padding: 0.3rem;">Service Code</th>
+            <th style="padding: 0.3rem;">Statement Description</th>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">S INS C</td>
+            <td style="padding: 0.2rem;">LK200</td>
+            <td style="padding: 0.2rem;">Install Service</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">S COS TRPC</td>
+            <td style="padding: 0.2rem;">LK205</td>
+            <td style="padding: 0.2rem;">Change of Service Fee</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">S COSNTRPC</td>
+            <td style="padding: 0.2rem;">LK206</td>
+            <td style="padding: 0.2rem;">Change of Service</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">VIDSELFINS</td>
+            <td style="padding: 0.2rem;">V0107</td>
+            <td style="padding: 0.2rem;">One-time charge</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.2rem;">TD</td>
+            <td style="padding: 0.2rem;">TD</td>
+            <td style="padding: 0.2rem;">TD</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+          <p>OTC codes are located in the CoPilot articles <a href="https://charterukm.custhelp.com/app/answers/answer_view/a_id/1012354">HOW4411</a> and <a href="https://charterukm.custhelp.com/app/answers/answer_view/a_id/1010700">HOW3704</a></p>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col">
+        <h3 class="mt-5">Office-only vs Self Install vs Truck Roll</h3>
+
+        <p>There are subtle, but important, differences between an office-only work order and a self-install work order. This section describes the difference between an office-only work order, a self-install work order, and a truck roll. </p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12 col-md-4">
+        <h4>Office-Only</h4>
+        <p>Office-only work order refers to a work order that does not require a tech to go out to the customer's location.</p>
+        <p> This work order is almost always closed out immediately after entering it. Examples of office-only work ordes include adding a channel package to an existing cable customer and balancing a cable occurrence. When we describe a work order as "an office-only" instead of "a self install" we are saying that the work order was created to handle one of these scenarios.</p>
+        <p>Office-only sales reasons include "Customer Called In", "Account Correction" and "Cost". </p>
+      </div>
+      <div class="col-12 col-md-4">  <h4>Self Install</h4>
+        <p>A self-install order is a type of office-only work order that includes mailing or picking up equipment.</p>
+        <p> A like-for-like swap is a type of self-install order. Self-install orders are closed out by clicking on the Office Only button in CRM because self-install orders are a type of office-only order. </p>
+        <p>Self-install sales reasons include "Self Install Ship" and "Self Install Pickup".</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h4>Truck Roll</h4>
+        <p>A truck roll is a type of work order that includes a professional home visit.</p>
+        <p> This can include upgrades and modification to existing lines of business, and installation of new lines of business. </p>
+        <p>Truck roll sales reasons include "Customer Called In", "Correction" and "Cost". </p>
+      </div>
+      </div>
+
+
+  </div><!-- /.container -->
+
+  <div class="my-1 mx-2">
+    <a href="../">&laquo; Back to OTCB</a>
+  </div>
+
+  <script src="../scripts/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../scripts/helper-functions.js"></script>
+</body>
+</html>

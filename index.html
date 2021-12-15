@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTC Buddy</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/purple_monster_16.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/bootstrap-min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="app-version/app-version.css" />
+  </head>
+  <body>
+    <header class="header">
+        <!-- START Modal -->
+        <div class="app-version-number ">
+          <a href="#" class="d-inline-block text-light" data-toggle="modal" data-target="#exampleModal" >v<span id="appVersionNumber"></span>
+          </a>
+        </div>
+
+        <div class="modal fade app-version-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">List of Recent Changes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="appVersionModalBody">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn  btn-info mr-auto show-full-list" onclick="printAppVersionLogs('full');">Show full list</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Modal -->
+
+      <hgroup class="mb-3 mb-md-0">
+        <img class="obuddyLogo" src="images/purple_monster.png" alt="">
+        <h1 class="mb-4 mt-2 text-center">OTC Buddy</h1>
+      </hgroup>
+      <div class="browser-support">
+        <p>OTCB no longer supports IE. Please use Edge or Chrome.</p>
+      </div>
+    </header>
+
+    <main class="main container-fluid">
+      <div class="row">
+
+        <!-- Left Column - Displays the Buttons for Choosing an Order Type -->
+        <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3 order-type">
+          <h2 class="col-header">Order Types</h2>
+
+          <h3 class="order-type-label">  CSI / SIK / EZC </h3>
+          <button class="btn order-type-btn" title="Look here for any type of a self installation order. This would include upgrades to add ancillary equipment, or equipment swaps.">
+             Self Install Orders
+          </button>
+          <ul class="hide hide-container">
+
+            <li id="ezcCable" class="order-type-list-item">Add/Upgrade only Cable</li>
+            <li id="ezcInternet" class="order-type-list-item">Add/Upgrade only Internet</li>
+            <li id="ezcPhone" class="order-type-list-item">Add/Upgrade only Phone</li>
+
+            <div class="separator"></div>
+
+            <li id="ezcCableInternet" class="order-type-list-item">Add/Upgrade Cable & Internet</li>
+            <li id="ezcCablePhone" class="order-type-list-item">Add/Upgrade Cable & Phone</li>
+            <li id="ezcInternetPhone" class="order-type-list-item">Add/Upgrade Internet & Phone</li>
+
+            <div class="separator"></div>
+
+            <li id="ezcCableInternetPhone" class="order-type-list-item">Install Triple Cable/Internet/Phone</li>
+
+            <div class="separator"></div>
+
+            <li id="ezcMailRemote" class="order-type-list-item">Mail Out Remote</li>
+            <li id="ezcEmptyCarton" class="order-type-list-item">Empty Carton Mail Out</li>
+
+            <div class="separator"></div>
+
+            <li id="ezcLLSwapMailOut" class="order-type-list-item">LL Equipment Swap - Mail Out</li>
+            <li id="ezcLLSwapPickUp" class="order-type-list-item">LL Equipment Swap - Store Pick Up</li>
+            <li id="ezcNonCompliantModemSwap" class="order-type-list-item">Non-Compliant Modem Swap</li>
+
+            <div class="separator"></div>
+
+            <li id="ezcSIKResearch" class="order-type-list-item">Self Install Equipment Research</li>
+          </ul>
+
+
+          <h3 class="order-type-label">Existing Customers - Upgrades</h3>
+          <button
+            class="btn btn-primary order-type-btn"
+            title="Use these options if you are looking to upgrade or modify an existing service. Examples include adding the service codes for a cable box that the customer picked up from the store, or fixing a wifi code."
+          >Modify/Balance Existing LOB</button>
+          <ul class="hide hide-container">
+            <li id="cosOfficeOnly" class="order-type-list-item" title="Change of Service (COS) for an existing line of business. This would include adding a new cable box, or balancing an occurrence.">COS Existing LOB - Office Only</li>
+            <li id="cosTechInstall" class="order-type-list-item" title="Change of Service (COS) for an existing line of business, with a tech install. This would included adding a new cable box where the customer requests that a tech do the installation. This can also include adding a new outlet for an existing cable box.">COS Existing LOB - Truck Trip</li>
+          </ul>
+
+          <button
+            class="btn btn-primary order-type-btn"
+            title="This would be for things like adding another cable box and having the tech install it, or going out to install an additional outlet for a sub that already has our cable"
+          >Add New LOB</button>
+          <ul class="hide hide-container">
+            <li id="addNewLOBSelfInstall" class="order-type-list-item">Add New LOB w/ Self Install</li>
+            <div class="separator"></div>
+
+            <li id="addNewLOBCable" class="order-type-list-item">Add New Cable - Tech Install</li>
+            <li id="addNewLOBInternet" class="order-type-list-item">Add New Internet - Tech Install</li>
+            <li id="addNewLOBPhone" class="order-type-list-item">Add New Phone - Tech Install</li>
+
+            <div class="separator"></div>
+
+            <li id="addNewLOBCableInternet" class="order-type-list-item">Add New Cable/Internet - Tech Install</li>
+            <li id="addNewLOBCablePhone" class="order-type-list-item">Add New Cable/Phone - Tech Install</li>
+
+            <div class="separator"></div>
+
+            <li id="addNewLOBInternetPhone" class="order-type-list-item">Add New Internet/Phone - Tech Install</li>
+          </ul>
+
+
+          <button class="btn btn-primary order-type-btn">
+            Transfer of Service
+          </button>
+          <ul class="ul hide hide-container">
+            <li id="transferOfService" class="order-type-list-item">Transfer of Service - any type</li>
+          </ul>
+
+          <h3 class="order-type-label">Brand New Customer -  Tech Install</h3>
+          <button class="btn btn-primary order-type-btn">
+            New Customer - Tech Install
+          </button>
+          <ul class="ul hide hide-container">
+            <li id="newLOBCable" class="order-type-list-item">Tech Install New Single Cable</li>
+            <li id="newLOBInternet" class="order-type-list-item">Tech Install New Single Internet</li>
+            <li id="newLOBPhone" class="order-type-list-item">Tech Install New Single Phone</li>
+            <div class="separator"></div>
+            <li id="newLOBCableInternet" class="order-type-list-item">Tech Install New Dbl Cable / Internet</li>
+            <li id="newLOBCablePhone" class="order-type-list-item">Tech Install New Dbl Cable / Phone</li>
+            <li id="newLOBInternetPhone" class="order-type-list-item">Tech Install New Dbl Internet / Phone</li>
+            <div class="separator"></div>
+            <li id="newLOBCableInternetPhone" class="order-type-list-item">Tech Install New Triple CBL/HSD/PHO</li>
+          </ul>
+
+
+          <h3 class="order-type-label">Other / Misc</h3>
+          <button class="btn btn-primary order-type-btn">General / Misc</button>
+          <ul class="ul hide hide-container">
+            <li id="officeOnlyCOS" class="order-type-list-item">Office Only Change of Service</li>
+            <li id="tnFeatureChange" class="order-type-list-item">Telephone Number or Feat Chng</li>
+            <li id="wallfish" class="order-type-list-item">Wall Fish</li>
+          </ul>
+
+          <button class="btn btn-primary order-type-btn">
+            SROs
+          </button>
+          <ul class="ul hide hide-container">
+            <li id="generalSROCodes" class="order-type-list-item">General SRO Codes</li>
+            <li id="downDropProcess" class="order-type-list-item">Drown Drop Process</li>
+            <li id="equipmentPickUp" class="order-type-list-item">Equipment Pickup</li>
+            <li id="signalLeakage" class="order-type-list-item">Signal Leakage</li>
+          </ul>
+
+            <h3 class="order-type-label">Additional Resources</h3>
+          <button class="btn btn-primary order-type-btn">
+            Order Entry FAQs
+          </button>
+          <ul class="ul hide hide-container">
+            <li id="billingRegions" class="order-type-list-item">Billing Regions Explained</li>
+            <li id="otcsVSServiceCodes" class="order-type-list-item" title="This explains the difference between a service code and an OTC (one time charge) code">
+              <a href="addl-resources/otcs-vs-service-codes.html" class="order-type-list-item"> OTCs vs Service Codes <i class="bi bi-arrow-up-right-square float-right" title="Opens in a new window"></i></a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- Middle Column - Displays the Select Item Codes -->
+        <div class="col-sm-7 col-md-4 col-lg-4 col-xl-5 selected-item">
+            <h2 class="col-header">Selected Item</h2>
+
+            <input
+            type="button"
+            class="btn btn-danger btn-sm mb-2"
+            name="reset"
+            id="reset"
+            value="reset"/>
+
+          <div id="selectedItemOutput" class="selected-item-output">...</div>
+
+        </div>
+
+
+        <!-- Right Column - Displays the Related Notes and Links -->
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 notes-links">
+          <h2 class="col-header">Notes & References</h2>
+          <div class="notes">
+            <div id="selectedItemNotes"></div>
+          </div>
+
+          <h2 class="col-header">Links and CoPilot Articles</h2>
+          <div class="links">
+            <h4 class="links-title mt-4">Related Articles:</h4>
+            <div id="selectedItemLinks" class="default-links-div"></div>
+            <div id="defaultLinksDiv"></div>
+            <div id="defaultTechOTCArticlesDiv"></div>
+            <div id="defaultServiceCodeArticlesDiv"></div>
+            <div id="defaultBOTMarketArticlesDiv"></div>
+            <div id="defaultCSGArticlesDiv"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-3 lg-4 p-4 text-center text-md-left">
+        </div>
+        <div class="col-12 col-md-4 p-4 text-center">
+          <p>Created By: Tami Sweitzer</p>
+          <p>Tami.Sweitzer@charter.com</p>
+        </div>
+        <div class="col-12 col-md-4 p-4 text-center text-md-right">
+          <p><a href="">RVR</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="app-version/app-version-entries.js"></script>
+    <script src="app-version/app-version.js"></script>
+    <script src="scripts/notes-and-links.js"></script>
+    <script src="scripts/otc_add-new-lob.js"></script>
+    <script src="scripts/otc_cos-existing-lob.js"></script>
+    <script src="scripts/otc_ezc.js"></script>
+    <script src="scripts/otc_misc.js"></script>
+    <script src="scripts/otc_new-customer-install.js"></script>
+    <script src="scripts/otc_sros.js"></script>
+    <script src="scripts/otc_transfer-of-service.js"></script>
+    <script src="addl-resources/resource_billing-regions.js"></script>
+    <script src="addl-resources/resource_otcs-vs-service-codes.js"></script>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>

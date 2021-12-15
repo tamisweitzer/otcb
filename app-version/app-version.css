@@ -1,0 +1,12 @@
+
+
+.version-log-row { display: flex; align-items: center; border-bottom: 1px solid #eee; }
+.version-log-row:last-child { border-bottom: none; }
+
+.version-log-key { min-width: 100px; padding: 0.3rem; }
+.version-log-value { padding: 0.3rem;  }
+
+.app-version-modal { color: #333; }
+
+.app-version-number {  font-size: 0.8rem; rem; font-weight: normal; color: #fff; text-align: right; }
+.app-version-number a {  font-size: inherit; display: inline-block; text-align: right; color: #fff; font-weight: 300; }
